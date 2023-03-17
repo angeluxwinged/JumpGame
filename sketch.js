@@ -3,6 +3,7 @@ var bg;
 var bg2;
 var dashImg;
 var dash;
+const SPACE = " ";
 
 function preload(){
     bgImg = loadImage('assets/bg.png');
@@ -25,5 +26,12 @@ function draw(){
     bg2.scroll();
 
     dash.draw();
+    dash.update();
 
+}
+
+function keyPressed(){
+    if(key === SPACE){
+        dash.jump();
+    }
 }
