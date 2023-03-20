@@ -31,7 +31,7 @@ function draw(){
 }
 
 function keyPressed(){
-    if(key === SPACE){
+    if(key === SPACE && dash.dashY == height - dash.dashS){
         dash.jump();
     }
 }
