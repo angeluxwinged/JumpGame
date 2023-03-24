@@ -9,6 +9,8 @@ class Rapidash{
     }
 
     draw(){
+        noFill();
+        rect(this.dashX, this.dashY, this.dashS ,this.dashS);
         image(this.img, this.dashX, this.dashY, this.dashS ,this.dashS);
     }
 
