@@ -5,7 +5,7 @@ class Bg{
         this.bgY = 0;
         this.bgW = width;
         this.bgH = height;
-        this.SCROLL_SPEED = 3;
+        this.SCROLL_SPEED = 10;
     }
 
     draw(){
@@ -16,7 +16,7 @@ class Bg{
         this.bgX -= this.SCROLL_SPEED;
 
         if(this.bgX < -width){
-            this.bgX = width;
+            this.bgX = width-10;
         }
     }
 }

@@ -1,9 +1,9 @@
+const SPACE = " ";
 var bgImg;
 var bg;
 var bg2;
 var dashImg;
 var dash;
-const SPACE = " ";
 let exeggutorImg;
 let exeggutors = [];
 
@@ -20,7 +20,6 @@ function setup(){
     bg = new Bg(bgImg, 0);
     bg2 = new Bg(bgImg, width);
     dash = new Rapidash(dashImg);
-    //exeggutor = new Exeggutor(exeggutorImg);
 
 }
 
@@ -28,8 +27,8 @@ function draw(){
     background('white');
 
     bg.draw();
-    bg.scroll();
     bg2.draw();
+    bg.scroll();
     bg2.scroll();
 
     dash.draw();
@@ -41,7 +40,22 @@ function draw(){
     for(let exeggutor of exeggutors){
         exeggutor.draw();
         exeggutor.move();
+
+        let dashRight = dash.dashX + dash.dashS/2;
+        let dashBottom = dash.dashY + dash.dashS/2;
+        let exeLeft = exeggutor.x;
+        let exeRight = exeggutor.x + exeggutor.s;
+        let exeTop = exeggutor.y;
+        let exeBottom = exeggutor.y + exeggutor.s;
+        
+        if (dashRight >= exeLeft && dash.dashX <= exeRight && dashBottom >= exeTop && dash.dashY <= exeBottom) {
+            noLoop();
+        }
+        
     }
+    
+ 
+    
 
    //si choca noLoop();
 

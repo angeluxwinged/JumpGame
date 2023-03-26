@@ -4,13 +4,13 @@ class Exeggutor{
         this.x = width;
         this.s = 70;
         this.y = height - this.s;
-        this.SPEED = 4;
+        this.SPEED = 12;
 
     }
 
     draw(){
-        noFill();
-        rect(this.x, this.y, this.s, this.s);
+        // noFill();
+        // rect(this.x, this.y, this.s, this.s);
         image(this.img, this.x, this.y, this.s, this.s);
     }
 
