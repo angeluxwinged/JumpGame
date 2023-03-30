@@ -15,7 +15,7 @@ class Rapidash{
     }
 
     jump(){
-        this.dashV = -35;
+        this.dashV = -25;
     }
 
     update(){

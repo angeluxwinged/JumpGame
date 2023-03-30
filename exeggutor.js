@@ -17,4 +17,5 @@ class Exeggutor{
     move(){
         this.x -= this.SPEED;
     }
+    
 }

@@ -1,4 +1,5 @@
 const SPACE = " ";
+var score = 0;
 var bgImg;
 var bg;
 var bg2;
@@ -34,7 +35,7 @@ function draw(){
     dash.draw();
     dash.update();
     
-    if(random(1) < 0.005){
+    if(frameCount % 30 == 0 && random(1) < 0.500){
         exeggutors.push (new Exeggutor(exeggutorImg));
     }
     for(let exeggutor of exeggutors){
@@ -49,20 +50,27 @@ function draw(){
         let exeBottom = exeggutor.y + exeggutor.s;
         
         if (dashRight >= exeLeft && dash.dashX <= exeRight && dashBottom >= exeTop && dash.dashY <= exeBottom) {
+            let gameOver = "GAME OVER";
+            let gameOverW = textWidth(gameOver);
+            textSize(38);
+            text(gameOver, width/2-gameOverW/2, height/2);
             noLoop();
         }
-        
+
+        if (exeggutor.x < dash.dashX - exeggutor.s) {
+            exeggutors.splice(exeggutor, 1);
+            score++;
+        }
     }
     
+    textSize(32);
+    text("SCORE: " + score, 10, 40);
  
-    
-
-   //si choca noLoop();
-
 }
 
 function keyPressed(){
     if(key === SPACE && dash.dashY == height - dash.dashS){
         dash.jump();
     }
+
 }
